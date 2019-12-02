@@ -1,6 +1,6 @@
 # wormcells
 
-Visit [https://wormcells.com/](https://wormcells.com/) to see it live. 
+Visit [dash.wormcells.com/](http://dash.wormcells.com/) to see it live. 
 
 ## Exploring C. elegans single cell data  
 
