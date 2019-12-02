@@ -1,4 +1,4 @@
-# wormcells: Visit [dash.wormcells.com:3737](http://dash.wormcells.com:3737) to see it live. 
+# wormcells: Visit [dash.wormcells.com](http://dash.wormcells.com:80) to see it live. 
 
 ## Exploring C. elegans single cell data  
 
