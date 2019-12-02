@@ -1,37 +1,17 @@
-## Welcome to GitHub Pages
+# wormcells
 
-You can use the [editor on GitHub](https://github.com/Munfred/wormcells/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Visit [https://wormcells.com/](https://wormcells.com/) to see it live. 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Exploring C. elegans single cell data  
 
-### Markdown
+This dashboard is a demonstration of how C. elegans single cell RNA sequencing data can be visualized. 
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+The 89,701 cells shown here comes from the article [A lineage-resolved molecular atlas of C. elegans embryogenesis at single-cell resolution](https://science.sciencemag.org/content/365/6459/eaax1971.long) (Packer et al, Science 2019).
 
-```markdown
-Syntax highlighted code block
+For this demonstration the original data available on [GEO126954](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE126954) was processed using a machine learning framework called [Single-cell Variational Inference (scVI)](https://github.com/YosefLab/scVI). The scVI framework enables integrating data from different sources (different experiments, batches and technologies), clustering and label transfer, and performing differential expression between clusters.
 
-# Header 1
-## Header 2
-### Header 3
+To learn how the plots were made, check out [this Jupyter notebook](https://colab.research.google.com/drive/1hF7KSujhhHcyxzWkzAHy9lazXLexainr) which creates the plots shown here. It runs on Google Colab so you can start playing right away.
 
-- Bulleted
-- List
+Feedback on this and other explorations will inform how [WormBase](https://wormbase.org/) may incorporate and display single cell data in the future. If you have any suggestions or comments, please create an issue on the GitHub repo at [https://github.com/Munfred/wormcells/issues](https://github.com/Munfred/wormcells/issues). 
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Munfred/wormcells/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+This dashboard and the interactive plots were created using [Plotly Dash](https://dash.plot.ly/introduction) and developed with the online IDE [repl.it](https://repl.it/~). 

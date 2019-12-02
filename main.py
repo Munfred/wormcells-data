@@ -115,7 +115,7 @@ For this demonstration the original data available on [GEO126954](https://www.nc
 
 To learn how the plots were made, check out [this Jupyter notebook](https://colab.research.google.com/drive/1hF7KSujhhHcyxzWkzAHy9lazXLexainr) which creates the plots shown here. It runs on Google Colab so you can start playing right away.
 
-Feedback on this and other explorations will inform how WormBase may incorporate and display single cell data in the future. 
+Feedback on this and other explorations will inform how [WormBase](https://wormbase.org/) may incorporate and display single cell data in the future. If you have any suggestions or comments, please create an issue on the GitHub repo at [https://github.com/Munfred/wormcells/issues](https://github.com/Munfred/wormcells/issues). 
 
 This dashboard and the interactive plots were created using [Plotly Dash](https://dash.plot.ly/introduction) and developed with the online IDE [repl.it](https://repl.it/~). 
 
