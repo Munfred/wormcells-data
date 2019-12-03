@@ -9,6 +9,8 @@ from dotenv import load_dotenv
 import os
 import urllib
 from urllib.parse import quote
+import dash_table
+
 
 load_dotenv()
 
@@ -62,6 +64,7 @@ gene_description_text_matrix = np.tile((top_expression.var['gene_id'] + '<br>' +
 genes = pd.read_csv('gene_ids_names_descriptions_20222.csv', index_col=0)
 genes['gene_description_html'] = genes['gene_description'].str.replace('\. ', '.<br>')
 cell_types_summary = pd.read_csv('packer_cell_types_summary.csv')
+cell_types_summary['cell_type_name'] = cell_types_summary['cell_type_name'].astype(str)
 
 cell_types_list=['nan',
 'Body_wall_muscle',
@@ -200,9 +203,8 @@ You can compare any two of the 37 cell types annotated in the original data, and
         html.Div([
             dcc.Dropdown(
                 id='cell_type1',
-                # options=[{'label': i, 'value': i} for i in ['Body_wall_muscle']],
-                options=[{'label': 'Body_wall_muscle', 'value': 'Body_wall_muscle'}],
-
+                options=[{'label': i, 'value': i} for i in cell_types_list],
+                #options=[{'label': 'Body_wall_muscle', 'value': 'Body_wall_muscle'}],
                 value='Body_wall_muscle'
             ),
         ],
@@ -236,7 +238,8 @@ dcc.Markdown('''
 
 ## 🌡️ Heatmap of top expressed genes per cell type
 
-This heatmap shows the differential expression results between each of the 37 cell types and the remaining cells. Only the top 10 genes for each tissue were chosen to be displayed, totalling 339 genes. By mousing over the plot you can see the [WormBase concise gene descriptions](https://wiki.wormbase.org/index.php/How_WormBase_writes_a_concise_description). 
+This heatmap shows the differential expression results between each of the 37 cell types and the remaining cells. Only the top 10 genes for each tissue were chosen to be displayed, totalling 339 genes. By mousing over the plot you can see the [WormBase concise gene descriptions](https://wiki.wormbase.org/index.php/How_WormBase_writes_a_concise_description). If you'd like to download the data for all genes, check [this download page](https://github.com/Munfred/wormcells/releases/tag/packer2019_all_DE_results). 
+Note that its 37 cell types * 20222 genes = 748214 entries.
 
 ''',
  style={'width': '60em'}
@@ -263,7 +266,35 @@ This heatmap shows the differential expression results between each of the 37 ce
                   },
       }
   ),
+    ############## CELL TYPES TABLES ###############
+dcc.Markdown('''
+
+####  Number of annotated cells for each type
+
+To satisfy your curiosity, here's how many of each type of cells were annotated in the original data. 
+
+''',
+ style={'width': '60em'}
+ ),  
+  dash_table.DataTable(
+      id='cell-types-table',
+      columns=[{"name": 'Cell Type Label', "id": 'cell_type_name'},
+      {"name": 'Number of labeled cells', "id": 'ncells'}
+      ],
+      
+      data=cell_types_summary.to_dict('records'),
+      style_table={
+        'maxWidth': '60em',
+    },
+      style_cell={
+        'overflow': 'hidden',
+        'textOverflow': 'ellipsis',
+        'maxWidth': '60em',
+    },
+)
+## This adds margins to the ENTIRE app
 ], style={'marginBottom': 60, 'marginTop': 60, 'marginRight': 60, 'marginLeft': 60})
+### End of the app, now callbacks
 
 ########## TSNE CALLBACK ###################
 @app.callback(
@@ -401,7 +432,14 @@ def update_download_link(cell_type1, cell_type2):
 
 PORTNUM = os.getenv("PORTNUM")
 if not PORTNUM: PORTNUM=80
+
+DEBUG = os.getenv("DEBUG")
+if not DEBUG: DEBUG=False
+# for the development server we load some configs from .env file 
+# Otherwise we use by default port 80
 if __name__ == '__main__':
-    app.run_server(debug=True, host='0.0.0.0', 
-    port=PORTNUM # this is loaded form .env file so it can be port 80 on deploy server
+    app.run_server(
+    debug=DEBUG, 
+    host='0.0.0.0', 
+    port=PORTNUM 
     )
