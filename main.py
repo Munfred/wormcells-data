@@ -4,8 +4,13 @@ import dash_html_components as html
 from dash.dependencies import Input, Output
 import pandas as pd
 import numpy as np
-# import plot_embedding
 import anndata
+from dotenv import load_dotenv
+import os
+import urllib
+from urllib.parse import quote
+
+load_dotenv()
 
 # here's a hack to randomize categorical colors, since plotly can't do that in a straightforward manner
 # we take the list of named css colors that it recognizes, and we picked a color based on the code of
@@ -44,7 +49,7 @@ categorial_features = {
 }
 
 cells = pd.read_csv(
-                  'short_annotations25k.csv',
+                  'cell_annotations.csv',
                   # 'packer_annotations_tsne_umap_coords.csv', 
                    index_col=0,
                    dtype={feature:'category' for feature in categorial_features.keys()})
@@ -96,6 +101,7 @@ cell_types_list=['nan',
 'Parent_of_exc_duct_pore_DB_1_3',
 'XXX']
 
+# external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 external_stylesheets = ['https://codepen.io/chriddyp/pen/dZVMbK.css']
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
@@ -115,9 +121,17 @@ For this demonstration the original data available on [GEO126954](https://www.nc
 
 To learn how the plots were made, check out [this Jupyter notebook](https://colab.research.google.com/drive/1hF7KSujhhHcyxzWkzAHy9lazXLexainr) which creates the plots shown here. It runs on Google Colab so you can start playing right away.
 
-Feedback on this and other explorations will inform how [WormBase](https://wormbase.org/) may incorporate and display single cell data in the future. If you have any suggestions or comments, please create an issue on the GitHub repo at [https://github.com/Munfred/wormcells/issues](https://github.com/Munfred/wormcells/issues). 
+This dashboard and the interactive plots were created using [Plotly Dash](https://dash.plot.ly/introduction) and developed with the online IDE [repl.it](https://repl.it/~). Feedback on this tool will inform how WormBase may incorporate and display single cell data in the future. 
 
-This dashboard and the interactive plots were created using [Plotly Dash](https://dash.plot.ly/introduction) and developed with the online IDE [repl.it](https://repl.it/~). 
+##### Currently this dashboard offers 4 visualizations:
+
+1) t-SNE embedding of all 89k cells, with coloring by annotated feature
+
+2) UMAP embedding of all 89k cells, with coloring by annotated feature
+
+3) Volcano plots for differential expression between any two cell types
+
+4) A heatmap showing expression of most abundant genes in each cell type 
 
 ''',
  style={'width': '60em'}
@@ -126,7 +140,7 @@ This dashboard and the interactive plots were created using [Plotly Dash](https:
 dcc.Markdown('''
 
 ## 🎨 t-SNE embedding of the cells
-[t-SNE](https://distill.pub/2016/misread-tsne/) is a visualization technique that tries push together points that are close in space, and separate points that are not close, but distances are meaningless. You can color the t-SNE embedding according to the features below. The colors are random. Give it a few seconds to reload once you choose a new feature. 
+[t-SNE](https://distill.pub/2016/misread-tsne/) is a visualization technique that tries push together points that are close in space, and separate points that are not close, but distances are meaningless. Each dot is a cell, and they are clustered according to their proximity in the latent space of gene expression that is learned by scVI. You can color the t-SNE embedding according to the features below. The colors are random. Give it a few seconds to reload once you choose a new feature. 
 
 **Color by:**
 ''',
@@ -147,7 +161,7 @@ dcc.Markdown('''
   html.Div([
 dcc.Markdown('''
 ## 🗺️ UMAP embedding of the cells
-[UMAP](https://umap-learn.readthedocs.io/en/latest/how_umap_works.html) is a visualization technique that tries to stitch together points that form a manifold. You can color the UMAP embedding according to the features below. The colors are random. Give it a few seconds to reload once you choose a new feature.    
+[UMAP](https://umap-learn.readthedocs.io/en/latest/how_umap_works.html) is a visualization technique that tries to stitch together points that form a manifold. Each dot is a cell, and they are clustered according to whether UMAP was able to strich them together in a path in the scVI latent space of gene expression . You can color the UMAP embedding according to the features below. The colors are random. Give it a few seconds to reload once you choose a new feature.    
 
 **Color by:**
 ''',
@@ -167,16 +181,17 @@ dcc.Markdown('''
     html.Div([
 dcc.Markdown('''
 
-## 📊 Differential expression
+## 📊 About Differential Expression of single cell data 
 
-The original annotations by Packer et al. annotations define 37 cell types. To speed things up for this demonstration the pairwise differential expression was pre-computed for the 666 possible combinations. 
+The original annotations by Packer et al. define 37 cell types. To make things faster for this demonstration the pairwise differential expression was pre-computed for all possible combinations. 
 
-Differential expression was not calculated between other annotated clusters (e.g. cell subtypes or embryo time points), but can be done in a relatively straightforward manner with scVI. To learn how scVI computes differential expression, see the original scVI paper [Lopez et al, arXiv:1709.02082](https://arxiv.org/abs/1709.02082) and the recent update described in [Boyeau et al, bioRxiv 2019. doi: 10.1101/794289](https://doi.org/10.1101/794289).
+Differential expression was not calculated between other annotated clusters (e.g. cell subtypes or embryo time points) because the number of combinations scales exponentially. However, it can be done in a relatively straightforward manner with scVI. To learn how scVI computes differential expression, see the original scVI paper [Lopez et al, arXiv:1709.02082](https://arxiv.org/abs/1709.02082) and the recent update described in [Boyeau et al, bioRxiv 2019. doi: 10.1101/794289](https://doi.org/10.1101/794289).
 
+#
 
 ## 🌋 Volcano plot of differential expression between cell types
 
-You can compare any two of the 37 cell types annotated in the original data. By mousing over the plot you can see the [WormBase concise gene descriptions](https://wiki.wormbase.org/index.php/How_WormBase_writes_a_concise_description). This volcano plot is colored according to the Bayes Factor with a color scheme plotly calls Magma 🌋.  
+You can compare any two of the 37 cell types annotated in the original data, and download a csv with the results. By mousing over the plot you can see the [WormBase concise gene descriptions](https://wiki.wormbase.org/index.php/How_WormBase_writes_a_concise_description). This volcano plot is colored according to the Bayes Factor with a color scheme plotly calls Magma 🌋.  
 ''',
  style={'width': '60em'}
  ), 
@@ -203,6 +218,17 @@ You can compare any two of the 37 cell types annotated in the original data. By 
     ]),
 
     dcc.Graph(id='volcano-plot'),
+
+    html.Br(),
+    html.Div([
+       html.A(
+        'Download 🌋 Data',
+        id='download-link',
+        download="rawdata.csv",
+        href="",
+        target="_blank")
+        ], style={'textAlign': 'left'}
+    ),
     html.Br(),
 
     ############## HEATMAP ###############
@@ -278,7 +304,7 @@ def update_figure(cluster_feature):
         )
     }
 
-########## TSNE CALLBACK ###################
+########## UMAP CALLBACK ###################
 @app.callback(
     Output('umap', 'figure'),
     [Input('umap-feature-radio', 'value')])
@@ -316,19 +342,24 @@ def update_figure(cluster_feature):
             height=800
         )
     }
-
+########### VOLCANO CALLBACK ###############
 @app.callback(
     Output('volcano-plot', 'figure'),
     [Input('cell_type1', 'value'),
      Input('cell_type2', 'value')])
 def update_graph(cell_type1, cell_type2):
-    de=pd.read_csv('./DE1/DE-'+ cell_type1 + '-' + cell_type2 + '.csv')
+    de=pd.read_csv('./DE/DE-'+ cell_type1 + '-' + cell_type2 + '.csv', index_col=0)
+    de=de.join(genes, how='inner')
 
     return {
         'data': [dict(
             x=de["log_scale_ratio"].round(3),
             y=de["abs_bayes_factor"].round(3),
-            text=genes['gene_description_html'] ,
+            text=de['gene_description_html'],
+            hoverinfo='text',
+            customdata=de.gene_id.values + '<br>Name: ' + de.gene_name.values,
+            hovertemplate='%{customdata} <br>' + 'Absolute Bayes Factor: %{y}<br>' + 'Log scale ratio: %{x}' + '<extra>%{text}</extra>',
+
             mode='markers',
             type='scattergl',
             marker={
@@ -353,5 +384,24 @@ def update_graph(cell_type1, cell_type2):
         )
     }
 
+@app.callback(
+    [Output('download-link', 'href'),
+     Output('download-link', 'download')],
+    [Input('cell_type1', 'value'),
+     Input('cell_type2', 'value')])
+def update_download_link(cell_type1, cell_type2):
+    de=pd.read_csv('./DE/DE-'+ cell_type1 + '-' + cell_type2 + '.csv', index_col=0)
+    de=de.join(genes, how='inner')
+    de["log_scale_ratio"] = de["log_scale_ratio"].round(3)
+    de["abs_bayes_factor"] = de["abs_bayes_factor"].round(3)
+    csv_string = de[['gene_id','gene_name',"log_scale_ratio","abs_bayes_factor"]].to_csv(index=False, encoding='utf-8')
+    csv_string = "data:text/csv;charset=utf-8," + quote(csv_string)
+    download='DE-'+ cell_type1 + '-' + cell_type2 + '.csv'
+    return csv_string, download
+
+PORTNUM = os.getenv("PORTNUM")
+if not PORTNUM: PORTNUM=80
 if __name__ == '__main__':
-    app.run_server(debug=True, host='0.0.0.0')
+    app.run_server(debug=True, host='0.0.0.0', 
+    port=PORTNUM # this is loaded form .env file so it can be port 80 on deploy server
+    )
