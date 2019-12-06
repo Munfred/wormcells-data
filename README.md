@@ -15,3 +15,10 @@ To learn how the plots were made, check out [this Jupyter notebook](https://cola
 Feedback on this and other explorations will inform how [WormBase](https://wormbase.org/) may incorporate and display single cell data in the future. If you have any suggestions or comments, please create an issue on the GitHub repo at [https://github.com/Munfred/wormcells/issues](https://github.com/Munfred/wormcells/issues). 
 
 This dashboard and the interactive plots were created using [Plotly Dash](https://dash.plot.ly/introduction) and developed with the online IDE [repl.it](https://repl.it/~). 
+
+
+
+
+
+
+Some single cell slides: https://docs.google.com/presentation/d/1rtp6ouWQtB0ge4qlwtMEYUqs7KScNudtJvVm8i45l88/edit?usp=sharing
