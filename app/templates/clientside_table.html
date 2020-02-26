@@ -1,0 +1,47 @@
+{% extends "template.html" %}
+{% block title %}
+
+    <title>Clientsideeedd Table</title>
+
+{% endblock %}
+{% block body %}
+
+    <script type="text/javascript" src="/static/js/clientside_table.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.3.1/css/select.dataTables.min.css">
+    <script type="text/javascript" charset="utf8"
+            src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/select/1.3.1/js/dataTables.select.min.js"></script>
+    <script type="text/javascript" charset="utf8"
+            src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+
+
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+
+
+    <h3>Enter your email to receive results and select cells to compare in two groups</h3>
+<form action="/action_page.php">
+  <label for="email">Enter your email:</label>
+  <input type="email" id="email" name="email">
+</form>
+
+
+    <button type="submit" value="Submit">Submit  💥 📱 🦠</button>
+
+    <h1><br> First group</h1>
+    <div class="table_container">
+        <table id="FIRST_TABLE" cellspacing="0"></table>
+    </div>
+
+    <h1><br> Second group</h1>
+
+
+    <div class="table_container">
+        <table id="SECOND_TABLE" cellspacing="0"></table>
+    </div>
+
+{% endblock %}

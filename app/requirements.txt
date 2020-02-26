@@ -1,0 +1,6 @@
+# Usage: pip install -r requirements.txt
+
+pandas
+python-decouple
+flask
+boto3
