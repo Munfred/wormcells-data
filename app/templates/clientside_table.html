@@ -1,0 +1,55 @@
+{% extends "template.html" %}
+{% block title %}
+
+    <title>Clientsideeedd Table</title>
+
+{% endblock %}
+{% block body %}
+
+    <script type="text/javascript" src="/static/js/clientside_table.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+
+<h3> Select cells to compare in two groups</h3>
+    <p>Input them separated by commas: <br>
+        <samp>cell_label, experiment_name</samp></p>
+    <p>Add one entry per line.</p>
+
+    <p> You can view the number of cells in each available experiment in
+        <a href="https://docs.google.com/spreadsheets/d/1xm0D-gqN8uMkmTYBjl-VJftCbB6NOkoX1C2RLreGsfY/edit?usp=sharing">
+            this spreadsheet.</a></p>
+<div>
+    <form action="/">
+    <h3> Input cells and experiments in group 1</h3>
+        <textarea name="group1" rows="15" cols="60">
+XXX, L2_experiment_1
+AFD, Waterston_300_minutes
+YYY, ceh-34
+        </textarea>
+        <br><br>
+        <h3> Input cells and experiments in group 2</h3>
+
+        <textarea name="group2" rows="15" cols="60">
+SMDD, cho-1_2
+SMD, Waterston_500_minutes_batch_2
+ADL, L2_experiment_2
+        </textarea>
+
+<p>If you would like to highlight genes on the resulting volcano plot, add one gene per line.
+    Gene name (<samp>bus-1</samp>) or WormBase</p>
+        <textarea name="genes" rows="15" cols="30">
+
+        </textarea>
+
+        <br><br>
+        <label for="email">Enter your email to receive results:</label>
+        <input type="email" id="email" name="email">
+    </form>
+</div>
+    <div>
+    <br>
+    <button type="submit" value="Submit" style="background: greenyellow; font-size:20px; width: 250px; padding: 14px 40px;">Submit  💥 📱 🦠</button>
+    </div>
+
+{% endblock %}
