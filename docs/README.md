@@ -1,7 +1,7 @@
 # wormcells: Visit [de.wormcells.com](https://de.wormcells.com) to explore gene expression on C. elegans single cell RNA sequencing data
 
 
-# `wormcells-de`: Exploring C. elegans single cell RNA sequencing data  
+## `wormcells-de`: Exploring C. elegans single cell RNA sequencing data  
 
 The `wormcells-de` app allows you to perform differential expression on data from C. elegans single cell RNA sequencing (scRNAseq). 21 experiments from 3 different studies were integrated and can be compared. That means you can select cells from two different experiments and perform differential expression on them!
 
