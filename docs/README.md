@@ -1,4 +1,4 @@
-# wormcells: Visit [de.wormcells.com](https://de.wormcells.com) to explore gene expression on C. elegans single cell RNA sequencing data
+# Visit [de.wormcells.com](https://de.wormcells.com) to explore gene expression on C. elegans single cell RNA sequencing data
 
 <br>
 <br>
