@@ -4,23 +4,29 @@
 <br>
 
 
-    <table border = "0.1">
-        <tr>
-        <td>Row 1, Column 1</td>
-        <td>Row 1, Column 2</td>
-        <td>Row 1, Column 2</td>
-        <td>Row 1, Column 2</td>
-        <td>Row 1, Column 2</td>
-        <td>Row 1, Column 2</td>
-        <td>Row 1, Column 2</td>
-        <td>Row 1, Column 2</td>
-        </tr>
-        
-        <tr>
-        <td>Row 2, Column 1</td>
-        <td>Row 2, Column 2</td>
-        </tr>
-    </table>
+<table border = "0.1">
+<tr>
+<td>Row 1, Column 1</td>
+<td>Row 1, Column 2</td>
+<td>Row 1, Column 2</td>
+<td>Row 1, Column 2</td>
+<td>Row 1, Column 2</td>
+<td>Row 1, Column 2</td>
+<td>Row 1, Column 2</td>
+<td>Row 1, Column 2</td>
+</tr>
+
+<tr>
+<td>Row 1, Column 1</td>
+<td>Row 1, Column 2</td>
+<td>Row 1, Column 2</td>
+<td>Row 1, Column 2</td>
+<td>Row 1, Column 2</td>
+<td>Row 1, Column 2</td>
+<td>Row 1, Column 2</td>
+<td>Row 1, Column 2</td>
+</tr>
+</table>
 
 
 
