@@ -2,6 +2,7 @@
 
 <br>
 <br>
+
 Food    | Description                           | Category | Sample type
 ------- | ------------------------------------- | -------- | -----------
 Apples  | A small, somewhat round ... A small, somewhat round          A small, somewhat round A small, somewhat round A small, somewhat round A small, somewhat round  | Fruit    | Fuji
