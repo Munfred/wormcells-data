@@ -3,20 +3,31 @@
 <br>
 <br>
 
-Food    | Description                           | Category | Sample type
-------- | ------------------------------------- | -------- | -----------
-Apples  | A small, somewhat round ... A small, somewhat round          A small, somewhat round A small, somewhat round A small, somewhat round A small, somewhat round  | Fruit    | Fuji
-Bananas | A long and curved, often-yellow ...   | Fruit    | Snow
-Kiwis   | A small, hairy-skinned sweet ...      | Fruit    | Golden
-Oranges | A spherical, orange-colored sweet ... | Fruit    | Navel
-{: .display}
+
+    <table border = "0.1">
+        <tr>
+        <td>Row 1, Column 1</td>
+        <td>Row 1, Column 2</td>
+        <td>Row 1, Column 2</td>
+        <td>Row 1, Column 2</td>
+        <td>Row 1, Column 2</td>
+        <td>Row 1, Column 2</td>
+        <td>Row 1, Column 2</td>
+        <td>Row 1, Column 2</td>
+        </tr>
+        
+        <tr>
+        <td>Row 2, Column 1</td>
+        <td>Row 2, Column 2</td>
+        </tr>
+    </table>
 
 
 
 | Header 1  | Another header here | This is a long header |
 | --------  | ------------------- | --------------------- |
 | Some data | Some more data      | [A lineage-resolved molecular atlas of C. elegans embryogenesis at single-cell resolution](https://science.sciencemag.org/content/365/6459/eaax1971.long)                | 
-| data      | Some long data here | more data             | 
+| data      | Some long data here |https://medium.com/@TrainYourDragon/how-to-commit-and-push-to-github-with-vscode-147991c849c6 more data             | 
 
 ##  Exploring C. elegans single cell RNA sequencing data  
 

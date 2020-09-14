@@ -3,7 +3,7 @@ title: This will be used as the title-tag of the page head
 ---
 
 ## Packer 2019 Embryogenesis Dataset				
-Packer and friends. [A lineage-resolved molecular atlas of C. elegans embryogenesis at single-cell resolution](https://science.sciencemag.org/content/365/6459/eaax1971.long). Science 2019.
+Packer et al 2019. [A lineage-resolved molecular atlas of C. elegans embryogenesis at single-cell resolution](https://science.sciencemag.org/content/365/6459/eaax1971.long).
 
 In the paper supplements, the way the age of the embryos was defined is described as follows:
 >_Around 250,000 L1 larvae were 29 plated onto four 100 mm petri plates seeded with NA22 bacteria and allowed to develop at 20 30 °C. As the worms reached the young adult stage, the population was closely monitored. When 31 about 20-30% of the adults had a single embryo in either arm of the gonad, worms were 32 subjected to hypochlorite treatment. The time hypochlorite was added to the worms was 33 considered t = 0._ 
