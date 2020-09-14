@@ -4,27 +4,21 @@
 <br>
 
 
-<table border = "0.1">
+<table style="width:auto%">
 <tr>
-<td>Row 1, Column 1</td>
-<td>Row 1, Column 2</td>
-<td>Row 1, Column 2</td>
-<td>Row 1, Column 2</td>
-<td>Row 1, Column 2</td>
-<td>Row 1, Column 2</td>
-<td>Row 1, Column 2</td>
-<td>Row 1, Column 2</td>
+<th>Firstname</th>
+<th>Lastname</th>
+<th>Age</th>
 </tr>
-
 <tr>
-<td>Row 1, Column 1</td>
-<td>Row 1, Column 2</td>
-<td>Row 1, Column 2</td>
-<td>Row 1, Column 2</td>
-<td>Row 1, Column 2</td>
-<td>Row 1, Column 2</td>
-<td>Row 1, Column 2</td>
-<td>Row 1, Column 2</td>
+<td> lineage-resolved molecular atlas of C. elegans embryogenesis at single-cell resolution</td>
+<td> lineage-resolved molecular atlas of C. elegans embryogenesis at single-cell resolution</td>
+<td> lineage-resolved molecular atlas of C. elegans embryogenesis at single-cell resolution</td>
+</tr>
+<tr>
+<td>Eve</td>
+<td>Jackson</td>
+<td>94</td>
 </tr>
 </table>
 
