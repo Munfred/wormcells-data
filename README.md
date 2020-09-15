@@ -3,8 +3,8 @@
 
 This website aims to be a handy collection of all publicly available C. elegans single cell and single nucleus RNA sequencing data. In addition to listing studies and original data sources, for convenience a direct download link to the data in [.h5ad](https://anndata.readthedocs.io/en/latest/) format is provided. 
 
-<font size="2" face="Arial" >
-<table style="width:150%" class="tbl" cellspacing="0" cellpadding="0" >
+<font size="1" face="Arial" >
+<table style="margin-left:auto;margin-right:auto;" class="tbl" cellspacing="0" cellpadding="0" >
 <tr>
 <th>Short Name</th>
 <th>Total cells</th>
