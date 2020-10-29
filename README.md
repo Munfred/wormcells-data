@@ -55,7 +55,7 @@ This website aims to be a handy collection of all publicly available C. elegans 
 <td>Ben-David 2020</td>
 <td> 55,508 </td>
 <td> 10x v2</td>
-<td> <a href="https://github.com/Munfred/wormcells-site/releases/download/bendavid2020.h5ad/bendavid2020.h5ad"> 145MB </a> </td>
+<td> <a href="https://github.com/Munfred/wormcells-site/releases/download/bendavid2020/bendavid2020.h5ad"> 145MB </a> </td>
 <td> L2 larvae</td>
 <td> <a href="https://doi.org/10.1101/2020.08.23.263798">Whole-organism mapping of the genetics of gene expression at cellular resolution </a> biorxiv 2020.</td>
 <td> - </td>
