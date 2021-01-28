@@ -1,9 +1,3 @@
-
----
-title: about
-filename: about.md
---- 
-
 # About the data
 
 ## Cao 2017 L2 Larva Dataset (reprocessed)	
