@@ -77,5 +77,3 @@ It loads an example C. elegans dataset with 100k cells and 169 cell types with d
 <a href="http://cengen.shinyapps.io/SCeNGEA"> Shiny R app to explore the data </a>
 </td>
 </tr>
-</table>
-</font>
