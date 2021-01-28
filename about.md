@@ -81,7 +81,7 @@ Taylor and friends. [Molecular topography of an entire nervous system](https://d
 
 This is the second data release of the C. elegans Neuronal Gene Expression Map & Network (CeNGEN). The aim of the project is to establish a comprehensive gene expression atlas of an entire nervous system at single-neuron resolution, described in [the announcement publication](https://doi.org/10.1016/j.neuron.2018.07.042). Their website is [cengen.org](https://cengen.org).
 
-The data matrix used used here was from the original unfiltered 10x matrices as outputted by cellranger, I kept the same barcodes they kept but skipped the soupX processing step as I don't think removing background from the matrix itself is a sensible thing. 
+The data matrix used used here was from the original unfiltered 10x matrices as outputted by cellranger, I kept the same barcodes they kept but skipped the soupX processing step as I don't think removing background from the matrix itself is a sensible thing. The authors provide the raw data as outputted by Cell Ranger and filtered by Emptydrops is at [this Dropbox link](https://www.dropbox.com/sh/uhve3syym2iqe7i/AABazRr9VexQwqhuQnBGN0s3a?dl=0).
 
 They used 10x Genomics v2 and v3 chemistry to profile 100,599 cells from L4 stage larvae, split as below. Their annotations define 133 cell types.
 
