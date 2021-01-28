@@ -3,7 +3,8 @@
 
 This website aims to be a handy collection of all publicly available C. elegans single cell and single nucleus RNA sequencing data. In addition to listing studies and original data sources, for convenience a direct download link to the data in [.h5ad](https://anndata.readthedocs.io/en/latest/) format is provided. 
 
-<font size="1" face="Arial" >
+
+<font size="1" face="Arial">
 <table style="margin-left:auto;margin-right:auto;" class="tbl" cellspacing="0" cellpadding="0" >
 <tr>
 <th>Short Name</th>
@@ -77,10 +78,10 @@ This website aims to be a handy collection of all publicly available C. elegans 
 
 </table>
 </font>
+
+
+
 # About the data
-
-
-
 
 ## Cao 2017 L2 Larva Dataset (reprocessed)	
 Cao and friends. [Comprehensive single-cell transcriptional profiling of a multicellular organism](https://doi.org/10.1126/science.aam8940). Science 2017.
