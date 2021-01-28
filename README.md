@@ -79,7 +79,6 @@ The .h5ad files provided here with the annotations from different studies the he
 <a href="http://cengen.shinyapps.io/SCeNGEA"> Shiny R app to explore the data </a>
 </td>
 </tr>
-
 </table>
 </font>
 
