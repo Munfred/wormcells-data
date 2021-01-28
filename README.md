@@ -3,9 +3,10 @@
 
 This website aims to be a handy collection of all publicly available C. elegans single cell and single nucleus RNA sequencing data. In addition to listing studies and the original data sources, for convenience the data has been repackaged and a direct download link to the data in [.h5ad](https://anndata.readthedocs.io/en/latest/) format is provided. The GitHub repository of this website is [https://github.com/munfred/wormcells-data](https://github.com/munfred/wormcells-data), and the .h5ad files are hosted on the repository's [releases page](https://github.com/Munfred/wormcells-data/releases).
 
-The .h5ad files provided here with the annotations from different studies the here can be readily used to perform differential expression between cell types of interest using a tutorial notebook written to be run on Google Colab. Click the button below to open a notebook and run it. It loads an example C. elegans dataset with 100k cells and 169 cell types with data from the data from the CeNGEN project published by [Taylor et al 2020](https://doi.org/10.1016/j.neuron.2018.07.042), and spins up a simple app for using a table like interface for performing differential expression. The code for the app is available at [https://github.com/munfred/scdefg](https://github.com/munfred/scdefg)
+The .h5ad files provided here with the annotations from different studies the here can be readily used to perform differential expression between cell types of interest using a tutorial notebook written to be run on Google Colab. Click the button below to open a notebook and run it. [![Open In Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Munfred/scdefg/blob/main/scdefg.ipynb)
 
-[![Open In Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Munfred/scdefg/blob/main/scdefg.ipynb)
+It loads an example C. elegans dataset with 100k cells and 169 cell types with data from the data from the CeNGEN project published by [Taylor et al 2020](https://doi.org/10.1016/j.neuron.2018.07.042), and spins up a simple app for using a table like interface for performing differential expression. The code for the app is available at [https://github.com/munfred/scdefg](https://github.com/munfred/scdefg)
+
 
 
 <font size="1" face="Arial">
