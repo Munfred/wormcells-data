@@ -1,6 +1,6 @@
 theme: jekyll-theme-cayman
 # remote_theme: poole/hyde
 title: C. elegans single cells 
-description: Explore single cell gene expression on C. elegans 
+description: A collection of all C. elegans single cell RNA sequencing data
 github:
   is_project_page: true
