@@ -71,7 +71,7 @@ It loads an example C. elegans dataset with 100k cells and 169 cell types with d
 <td> 10x v2/v3</td>
 <td> <a href="https://github.com/Munfred/wormcells-site/releases/download/taylor2020/taylor2020.h5ad"> 364MB </a> </td>
 <td> L4 larvae neurons selected via flow cytometry </td>
-<td> <a href="https://doi.org/10.1101/2020.12.15.422897">Molecular topography of an entire nervous system.</td>
+<td> <a href="https://doi.org/10.1101/2020.12.15.422897">Molecular topography of an entire nervous system. </a> </td>
 <td> <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE136049">GSE136049</a> </td>
 <td> <a href="https://cengen.org">CeNGEN website </a> 
 <a href="http://cengen.shinyapps.io/SCeNGEA"> Shiny R app to explore the data </a>
