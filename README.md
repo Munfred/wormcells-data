@@ -26,7 +26,7 @@ It loads an example C. elegans dataset with 100k cells and 169 cell types with d
 <td>Cao 2017</td>
 <td> 35,987 </td>
 <td> sci-RNA-seq</td>
-<td> <a href="https://github.com/Munfred/wormcells-site/releases/download/cao2017/cao2017.h5ad"> 136MB </a> </td>
+<td> <a href="https://github.com/Munfred/wormcells-data/releases/download/cao2017/cao2017.h5ad"> 136MB </a> </td>
 <td> L2 larvae</td>
 <td> <a href="https://doi.org/10.1126/science.aam8940">A lineage-resolved molecular atlas of C. elegans embryogenesis at single-cell resolution </a> Science 2019.</td>
 <td> <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE98561">GSE98561 </a> and <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM4318946">GSM4318946 (reprocessed)</a>  </td>
@@ -37,7 +37,7 @@ It loads an example C. elegans dataset with 100k cells and 169 cell types with d
 <td>Packer 2019</td>
 <td> 89,701 </td>
 <td> 10x v2</td>
-<td> <a href="https://github.com/Munfred/wormcells-site/releases/download/packer2019/packer2019.h5ad"> 653MB </a> </td>
+<td> <a href="https://github.com/Munfred/wormcells-data/releases/download/packer2019/packer2019.h5ad"> 653MB </a> </td>
 <td> Several timepoints of embryo development</td>
 <td> <a href="https://science.sciencemag.org/content/365/6459/eaax1971.long">A lineage-resolved molecular atlas of C. elegans embryogenesis at single-cell resolution </a> Science 2019.</td>
 <td> <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE126954">GSE126954</a> </td>
@@ -48,7 +48,7 @@ It loads an example C. elegans dataset with 100k cells and 169 cell types with d
 <td>Taylor 2019</td>
 <td> 65,450 </td>
 <td> 10x v2/v3</td>
-<td> <a href="https://github.com/Munfred/wormcells-site/releases/download/taylor2019/taylor2019.h5ad"> 217MB </a> </td>
+<td> <a href="https://github.com/Munfred/wormcells-data/releases/download/taylor2019/taylor2019.h5ad"> 217MB </a> </td>
 <td> L4 larvae neurons selected via flow cytometry </td>
 <td> <a href="https://doi.org/10.1101/737577">Expression profiling of the mature C. elegans nervous system by single-cell RNA-Sequencing </a> biorxiv 2019.</td>
 <td> <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE136049">GSE136049</a> </td>
@@ -61,7 +61,7 @@ It loads an example C. elegans dataset with 100k cells and 169 cell types with d
 <td>Ben-David 2020</td>
 <td> 55,508 </td>
 <td> 10x v2</td>
-<td> <a href="https://github.com/Munfred/wormcells-site/releases/download/bendavid2020/bendavid2020.h5ad"> 145MB </a> </td>
+<td> <a href="https://github.com/Munfred/wormcells-data/releases/download/bendavid2020/bendavid2020.h5ad"> 145MB </a> </td>
 <td> L2 larvae</td>
 <td> <a href="https://doi.org/10.1101/2020.08.23.263798">Whole-organism mapping of the genetics of gene expression at cellular resolution </a> biorxiv 2020.</td>
 <td> - </td>
@@ -72,7 +72,7 @@ It loads an example C. elegans dataset with 100k cells and 169 cell types with d
 <td>Taylor 2020</td>
 <td> 100,955 </td>
 <td> 10x v2/v3</td>
-<td> <a href="https://github.com/Munfred/wormcells-site/releases/download/taylor2020/taylor2020.h5ad"> 364MB </a> </td>
+<td> <a href="https://github.com/Munfred/wormcells-data/releases/download/taylor2020/taylor2020.h5ad"> 364MB </a> </td>
 <td> L4 larvae neurons selected via flow cytometry </td>
 <td> <a href="https://doi.org/10.1101/2020.12.15.422897">Molecular topography of an entire nervous system. </a> </td>
 <td> <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE136049">GSE136049</a> </td>
